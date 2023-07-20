@@ -46,7 +46,7 @@ def load_data(partition, scalar):
     for file in files:
         file = os.path.join(base_dir, 'data', '%s_data' % partition, file)
         pcd = o3d.io.read_point_cloud(file)
-        pcd = np.asarray(pcd.points) * 7.3951
+        pcd = np.asarray(pcd.points)
         pcd = np.expand_dims(pcd, axis=0)
         pcd_mean = pcd.mean(axis=1, keepdims=False)
         pc_means.append(pcd_mean)
